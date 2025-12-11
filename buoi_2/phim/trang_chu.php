@@ -65,23 +65,42 @@
           <img src="./img/qc.jpg" style="margin-top: 25px" alt="" />
         </div>
       </div>
+      <?php
+        include ('../connect.php');
+      ?>
       <div class="content">
         <div>
+          <?php
+              $sql = "SELECT t.* FROM the_loai t ";
+              $result = mysqli_query($conn, $sql);
+              while($row = mysqli_fetch_array($result)) {
+                $idTheLoai = $row['id'];
+             ?>
           <div class="header_cayphimmoingay header">
-            <p>Cày phim mỗi ngày</p>
+            <!-- <p>Cày phim mỗi ngày</p> -->
+            <p><?php echo $row['ten_the_loai']; ?></p>
             <a href="">Xem thêm</a>
           </div>
+
           <div class="content_cayphimmoingay">
+            <?php
+              $sql2 = "SELECT p.* FROM phim p WHERE the_loai_id ='$idTheLoai'";
+              $result2 = mysqli_query($conn, $sql2);
+              while($row2 = mysqli_fetch_array($result2)) {
+            
+            ?>
+
             <div>
               <a href="#"
                 ><img
                   onclick="chonPhim(1)"
-                  src="./img/350x495-muado.jpg"
+                  src="../<?php echo $row2['poster'] ?>"
                   alt=""
               /></a>
-              <p>Mưa Đỏ</p>
+              <p><?php echo $row2['ten_phim'] ?></p>
             </div>
-            <div>
+            <?php } ?>
+            <!-- <div>
               <a href="#"
                 ><img
                   onclick="chonPhim(3)"
@@ -106,10 +125,11 @@
             <div>
               <a href="#"><img src="./img/350x495-muado.jpg" alt="" /></a>
               <p>Mưa Đỏ</p>
-            </div>
+            </div> -->
           </div>
+          <?php } ?>
         </div>
-        <div>
+        <!-- <div>
           <div class="header_moi_ra_mat header">
             <p>Mới ra mắt</p>
           </div>
@@ -132,7 +152,7 @@
               <p>One Punch Man</p>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </main>
     <footer style="background-color: rgb(53, 53, 53)">

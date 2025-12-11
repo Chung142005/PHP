@@ -32,6 +32,7 @@
             <th>Năm phát hành</th>
             <th>Poster</th>
             <th>Quốc gia</th>
+            <th>Thể Loại</th>
             <th>Số tập</th>
             <th>Trailer</th>
             <th>Mô tả</th>
@@ -49,8 +50,9 @@
             <td><?php echo $row["dao_dien_id"]?></td>
             <td><?php echo $row["dien_vien_id"]?></td>
             <td><?php echo $row["nam_phat_hanh"]?></td>
-            <td><?php echo $row["poster"]?></td>
+            <td><img src="<?php echo $row["poster"]?>" alt="ảnh poster" width=50px></img></td>
             <td><?php echo $row["quoc_gia_id"]?></td>
+            <td><?php echo $row["the_loai_id"]?></td>
             <td><?php echo $row["so_tap"]?></td>
             <td><?php echo $row["trailer"]?></td>
             <td><?php echo $row["mo_ta"]?></td>
