@@ -22,6 +22,7 @@
         echo soPi."<br> ";
 
         // 4 phân biệt ' ' và " "
+        echo "phân biệt";
         echo "$ten"."<br>";
         echo '$ten'."<br>";
 
@@ -126,14 +127,14 @@
         // }
 
         // 12 hàm
-        function xinChao(){
-            return "hello";
-        };
-        echo xinChao();
-        // hàm có tham số
-        function xinChao($ten){
-            return "hello $ten"
-        }
+        // function xinChao(){
+        //     return "hello";
+        // };
+        // echo xinChao();
+        // // hàm có tham số
+        // function xinChao($ten){
+        //     return "hello $ten"
+        // }
 
 
     ?>
